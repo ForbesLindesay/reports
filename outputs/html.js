@@ -10,10 +10,11 @@ module.exports = function () {
     if (first) {
       first = false;
     } else if (record.fields) {
-      this.push('</tbody></table>');
+      this.push('</tbody></table></div>');
     }
     if (record.fields) {
-      this.push('<table>');
+      this.push('<div class="row">');
+      this.push('<table class="table table-condensed">');
       this.push('<thead>');
       this.push('<tr>');
       for (var i = 0; i < record.fields.length; i++) {
@@ -37,7 +38,7 @@ module.exports = function () {
   }
 
   function transformEnd(callback) {
-    this.push('</tbody></table>');
+    this.push('</tbody></table></div>');
     callback();
   }
 };
